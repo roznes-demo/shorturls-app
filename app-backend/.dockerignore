@@ -1,0 +1,43 @@
+# services/app-backend/.dockerignore
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Node (if using Mix/Vite locally)
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Composer vendor (installed in image)
+vendor
+
+# Laravel caches & logs
+storage/logs
+storage/framework/cache
+storage/framework/sessions
+storage/framework/views
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea
+.vscode
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# ZzZ
+note

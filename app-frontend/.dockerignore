@@ -1,0 +1,42 @@
+# Git
+# services/app-frontend/.dockerignore
+
+# Node
+node_modules
+npm-debug.log
+yarn-error.log
+pnpm-debug.log
+
+# Build output
+dist
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Vite/TS caches
+.vite
+*.tsbuildinfo
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+.idea
+.vscode
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# ZzZ
+note

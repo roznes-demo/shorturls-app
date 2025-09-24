@@ -1,0 +1,34 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: app-backend
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_URL: http://192.168.1.192:8011
+      URL_BACKEND: http://192.168.1.192:8011
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: "3306"
+      DB_DATABASE: short_urls_db
+      DB_USERNAME: root
+      DB_PASSWORD: shorturls2025
+    ports:
+      - "8011:8011"
+    networks:
+      - webnet
+    restart: unless-stopped
+    volumes:
+      # writable paths go to named volumes (NOT the NAS share)
+      - app_storage:/var/www/html/storage
+      - app_cache:/var/www/html/bootstrap/cache
+
+networks:
+  webnet:
+    external: true
+
+volumes:
+  app_storage:
+  app_cache:

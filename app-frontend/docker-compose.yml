@@ -1,0 +1,24 @@
+# app-frontend/docker-compose.yml
+
+services:
+  app-frontend:
+    build: .
+    container_name: app-frontend
+
+    # DEV
+    # environment:
+    #   VITE_URL_BACKEND: http://localhost:8011
+    # ports:
+    #   - "3000:8012"   # host:container (use 3000 in browser)
+
+    # PRD
+    environment:
+      VITE_URL_BACKEND: http://192.168.1.192:8011
+
+    networks:
+      - webnet
+    restart: unless-stopped
+
+networks:
+  webnet:
+    external: true
