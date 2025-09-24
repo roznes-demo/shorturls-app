@@ -54,7 +54,8 @@ class ShortURLController extends Controller
             }
 
             // Use .env URL_BACKEND or config app.url
-            $baseUrl  = rtrim(env('URL_BACKEND', config('app.url')), '/');
+            // $baseUrl  = rtrim(env('URL_BACKEND', config('app.url')), '/');
+            $baseUrl = rtrim(config('app.url'), '/');
             $shortUrl = $baseUrl . '/short-url/' . $code;
 
             $data = collect([[
@@ -89,7 +90,8 @@ class ShortURLController extends Controller
                 ->orderByDesc('id')
                 ->first();
 
-            $baseUrl = rtrim(env('URL_BACKEND', config('app.url')), '/');
+            // $baseUrl = rtrim(env('URL_BACKEND', config('app.url')), '/');
+            $baseUrl = rtrim(config('app.url'), '/');
 
             $data = $row
                 ? collect([[
